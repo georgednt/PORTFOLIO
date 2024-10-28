@@ -20,9 +20,21 @@ html {
 
 /* Logo Styling */
 .logo {
-    width: 80px; /* Αυξάνουμε το μέγεθος του logo για να είναι πιο εμφανές */
+    width: 200px; /* Προεπιλεγμένο μέγεθος για desktop */
     height: auto;
     margin-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 120px; /* Μικρότερη εικόνα σε tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px; /* Μικρότερη εικόνα σε κινητά */
+    }
 }
 
 /* Header Styling with Flex Layout */
@@ -30,7 +42,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url('logo4.png') no-repeat center center; /* Εικόνα ως background */
+    background: url('background.jpg') no-repeat center center; /* Εικόνα ως background */
     background-size: cover; /* Καλύπτει ολόκληρο το header */
     color: white;
     padding: 2rem;
