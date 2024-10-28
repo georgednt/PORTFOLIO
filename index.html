@@ -101,6 +101,68 @@
                 <li>Data Storage: Tasks are saved in a file, while actions are logged in a separate log file.</li>
             </ul>
         </div>
+
+
+        <div class="project-preview">
+            <button onclick="showDetails('chatModerator')">Chat Moderator</button>
+        </div>
+        <div id="chatModerator" class="project-details">
+            <h3>Chat Moderator</h3>
+            <img src="ChatUI.png" alt="Chat Moderator Project Image" class="project-image">
+            <p>This project is a real-time chat moderation tool that allows moderators to monitor and manage chat messages.</p>
+        
+            <h4>Project Overview:</h4>
+            <p>The Chat Moderator project is a real-time chat moderation tool designed to manage a chat server. It consists of a server in C++ and a client UI in C# with the following functionalities:</p>
+            
+            <h4>Functionalities:</h4>
+            <ul>
+                <li><strong>Real-Time Chat Monitoring:</strong>
+                    <ul>
+                        <li>The C++ server simulates a real-time chat environment by continuously generating user messages, some of which may contain prohibited language or spam.</li>
+                        <li>The C# client (Chat Moderator UI) connects to the server and displays these messages in a ListBox (<code>lstChat</code>) for the moderator to monitor.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Message Display and Interaction:</strong>
+                    <ul>
+                        <li>Messages received from the server are displayed in the <code>lstChat</code> box.</li>
+                        <li>The moderator can click on specific messages to select a user for further action (ban or timeout).</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Moderation Controls:</strong>
+                    <ul>
+                        <li><strong>Ban Button:</strong> The moderator can select a user’s message and click "BAN" to prevent the user from further participation. This action is sent to the server, which updates its list of banned users, filtering out any future messages from them.</li>
+                        <li><strong>Timeout Button:</strong> The moderator can use the "TIMEOUT" button to temporarily restrict a user. This action is sent to the server, where the user is placed in a timeout status, limiting them from posting for a defined period.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Moderator and Banned/Timeout Display:</strong>
+                    <ul>
+                        <li><strong>Moderators ListBox:</strong> Displays a list of active moderators managing the chat.</li>
+                        <li><strong>Banned/Timeout ListBox:</strong> Shows users who have been banned or are currently in timeout. This box updates as actions are taken and provides moderators with a clear view of the enforcement status.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Background Functionality:</strong>
+                    <ul>
+                        <li>The connection to the server runs on a background thread, continuously listening for new messages while allowing the moderator to take actions seamlessly.</li>
+                        <li>The project is designed to handle exceptions gracefully, ensuring the UI remains responsive even if the server experiences connectivity issues.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Design and Usability:</strong>
+                    <ul>
+                        <li>The UI elements are designed for clarity and ease of use, with distinctive buttons for actions and a well-structured chat display.</li>
+                        <li>The ListBox components are organized to make it easy for moderators to view chat messages, manage moderators, and track banned or timed-out users.</li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <h4>Purpose:</h4>
+            <p>This project is intended to simulate a real-time chat moderation tool that handles both the technical and interface aspects of managing a live chat environment. It demonstrates how to use C++ for server management alongside C# for a polished, interactive client interface.</p>
+        </div>
+        
     </section>
 
     <!-- Contact Section -->
