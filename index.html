@@ -9,7 +9,7 @@
 <body>
     <!-- Header Section -->
     <header id="home">
-        <img src="logo4.png" alt="Logo" class="logo">
+        <img src="newlogo2.png" alt="Logo" class="logo">
         <div class="header-content">
             <h1>PORTFOLIO</h1>
             <p>Short Bio: Passionate developer with a focus on creating innovative solutions.</p>
@@ -33,7 +33,7 @@
         </div>
         <div id="networkManager" class="project-details">
             <h3>Network Manager</h3>
-            <img src="Network manager.png" alt="Network Manager Project Image" class="project-image">
+            <img src="Network manager.png" alt="Network Manager Project Image" class="project-image" onclick="zoomImage(this)">
             <p>This project is a Network Manager application that allows the user to monitor and manage network and VPN connections on their computer.</p>
             <p>The application is written in C# and uses the Windows Forms library for the graphical user interface (GUI).</p>
             <p>Following is a detailed description of the functions and features of the application:</p>
@@ -68,38 +68,111 @@
             </ul>
         </div>
         
+     
         <div class="project-preview">
-            <button onclick="showDetails('todoList')">Organizer (To-Do List)</button>
+            <button onclick="showDetails('todoList')">Organizer (Cloud Connected)</button>
         </div>
         <div id="todoList" class="project-details">
-            <h3>Organizer (To-Do List)</h3>
-            <img src="to_do_list.png" alt="To-Do List Project Image" class="project-image">
-            <p>The To-Do List project is a daily task management application that allows the user to organize and track tasks.</p>
-            <p>The application is written in C# and uses Windows Forms for the GUI.</p>
+            <h3>Organizer (Cloud Connected)</h3>
+            <img src="Organizer.png" alt="To-Do List Project Image" class="project-image" onclick="zoomImage(this)">
 
-            <p><strong>Main Functions:</strong></p>
-
+            
+            <p><strong>Project Description: ToDo List with Cloud Sync</strong></p>
+            <p>This project is a task management application (ToDo List) that allows users to create, manage, and track their tasks. The application offers cloud synchronization features, supporting multiple users with secure Firebase authentication. Users can log in, sync their tasks to the cloud, and receive notifications for upcoming deadlines.</p>
+        
+            <p><strong>Application Features</strong></p>
+            
+            <h4>Task Management:</h4>
             <ul>
-                <li>Add new tasks with name, date, time, and priority (High, Medium, Low).</li>
-                <li>Delete tasks individually or clear the entire list.</li>
-                <li>Automatic Notifications: Reminders for tasks nearing deadlines.</li>
-                <li>Save and Load Tasks: Tasks are saved to a file and loaded when the app starts.</li>
+                <li>Users can create, delete, and edit tasks.</li>
+                <li>Tasks include fields like Task Name, Date and Time, and Priority (High, Medium, Low).</li>
+                <li>Tasks are stored locally and can be synced with the cloud.</li>
             </ul>
-
-            <p><strong>Monitoring Functions:</strong></p>
+            
+            <h4>Cloud Sync (Firebase Firestore):</h4>
             <ul>
-                <li>Task Notification: Reminds the user of tasks scheduled within the next 10 minutes.</li>
-                <li>Status Updates: Displays task list with dates, times, and priorities.</li>
-                <li>Automatic Status Update: Timer checks task deadlines regularly.</li>
+                <li>Sync all tasks to the cloud, allowing access from different devices.</li>
+                <li>A <strong>Sync</strong> button for synchronizing and a <strong>Refresh</strong> button for refreshing tasks from the cloud.</li>
             </ul>
-
-            <p><strong>Architecture:</strong></p>
+        
+            <h4>Multi-User and Authentication (Firebase Authentication):</h4>
             <ul>
-                <li>GUI: Buttons, text fields, and lists for easy interaction.</li>
-                <li>Labels and Notifications: Displays task info and pop-up reminders.</li>
-                <li>Timer: Monitors tasks and triggers notifications as needed.</li>
-                <li>Data Storage: Tasks are saved in a file, while actions are logged in a separate log file.</li>
+                <li>Users can log in with their email and password, ensuring they only see their tasks.</li>
+                <li><strong>Login</strong> and <strong>Logout</strong> buttons are available for user management.</li>
+                <li>Each user has a separate account and data.</li>
             </ul>
+        
+            <h4>Deadline Notifications:</h4>
+            <ul>
+                <li>Notifications are displayed when a task is approaching its deadline (10 minutes before).</li>
+                <li>Notifications appear as messages and sounds (Beep), alerting users to complete their tasks.</li>
+            </ul>
+        
+            <h4>Log File for Action Tracking:</h4>
+            <ul>
+                <li>The application logs all main actions (e.g., adding, deleting tasks, syncing, logging in) to a log file for tracking user actions.</li>
+            </ul>
+        
+            <p><strong>Technical Features</strong></p>
+        
+            <h4>Platform:</h4>
+            <ul>
+                <li>Windows Forms Application (.NET Framework) in C#.</li>
+            </ul>
+        
+            <h4>Tools and Libraries:</h4>
+            <ul>
+                <li>FirebaseAdmin and Google.Apis.Auth for Firebase integration (Authentication and Firestore).</li>
+                <li>System.IO for file management and log tracking.</li>
+            </ul>
+        
+            <h4>Requirements:</h4>
+            <ul>
+                <li>.NET Framework 4.6.1 or newer.</li>
+                <li>Firebase project to support Firestore and Authentication.</li>
+                <li>Service account key file (JSON) from Firebase Console for Firestore integration.</li>
+            </ul>
+        
+            <h4>Button Functions:</h4>
+            <ul>
+                <li><strong>Sync Button:</strong> Synchronize local tasks with Firestore.</li>
+                <li><strong>Login Button:</strong> Log in the user through Firebase Authentication.</li>
+                <li><strong>Logout Button:</strong> Log out the user from Firebase.</li>
+                <li><strong>Refresh Button:</strong> Refresh task list from Firestore without syncing.</li>
+            </ul>
+        
+            <p><strong>How to Use the Application</strong></p>
+            
+            <h4>Starting the Application:</h4>
+            <ul>
+                <li>Open the application and log in with your email and password (if you have an account).</li>
+                <li>If you don’t have an account, you can create one through Firebase Console and link it to the application.</li>
+            </ul>
+        
+            <h4>Adding and Managing Tasks:</h4>
+            <ul>
+                <li>Use the Task Name field to name a task and select the priority.</li>
+                <li>Add the task with the <strong>Add</strong> button and save changes locally or to the cloud with the <strong>Sync</strong> button.</li>
+            </ul>
+        
+            <h4>Syncing Tasks:</h4>
+            <ul>
+                <li>Press the <strong>Sync</strong> button to sync tasks with the cloud or the <strong>Refresh</strong> button to view updates from other devices.</li>
+            </ul>
+        
+            <h4>Notifications:</h4>
+            <ul>
+                <li>If a task is nearing its deadline, you will receive a notification 10 minutes before with a message and sound (Beep).</li>
+                <li>To turn off notifications, simply disable the <code>notificationTimer</code>.</li>
+            </ul>
+        
+            <h4>Logging Out:</h4>
+            <ul>
+                <li>When finished, you can log out with the <strong>Logout</strong> button to secure your data.</li>
+            </ul>
+        
+            <p><strong>Use Cases</strong></p>
+            <p>This application can be used for personal task management, with access from multiple devices and data security through Firebase. It is suitable for users who need an easy-to-use notification and task tracking system with cloud synchronization.</p>
         </div>
 
 
@@ -108,7 +181,7 @@
         </div>
         <div id="chatModerator" class="project-details">
             <h3>Chat Moderator</h3>
-            <img src="ChatUI.png" alt="Chat Moderator Project Image" class="project-image">
+            <img src="ChatUI.png" alt="Chat Moderator Project Image" class="project-image" onclick="zoomImage(this)">
             <p>This project is a real-time chat moderation tool that allows moderators to monitor and manage chat messages.</p>
         
             <h4>Project Overview:</h4>
