@@ -12,7 +12,7 @@
         <img src="newlogo2.png" alt="Logo" class="logo">
         <div class="header-content">
             <h1>PORTFOLIO</h1>
-            <p>Short Bio: Passionate developer with a focus on creating innovative solutions.</p>
+            <p>Short Bio:</p>
             <p>I am Georgios Dontas, a programmer with a passion for innovative solutions and creating functional applications.</p>
             <p>Discover my projects and see how I can contribute to the development of your next project.</p>
             <nav>
@@ -236,6 +236,131 @@
             <p>This project is intended to simulate a real-time chat moderation tool that handles both the technical and interface aspects of managing a live chat environment. It demonstrates how to use C++ for server management alongside C# for a polished, interactive client interface.</p>
         </div>
         
+        <div class="project-preview">
+            <button onclick="showDetails('translator')">Translator</button>
+        </div>
+        <div id="translator" class="project-details">
+            <h3>Translator</h3>
+            <img src="Translateimage.png" alt="Translator Project Image" class="project-image" onclick="zoomImage(this)">
+            <p>This application is a real-time text and speech translator, allowing users to translate text and receive spoken feedback in their chosen language. It includes features for speech recognition, translation history, and audio playback of translated text. The app is designed with a simple, user-friendly interface, offering instant updates on its status and additional settings to customize the user experience.</p>
+            
+            <h4>Application Features:</h4>
+            <ul>
+                <li><strong>Text Input for Translation:</strong>
+                    <p>Users can enter text in the input field. The field supports multiple lines, making it suitable for longer paragraphs. After entering text, users can proceed by clicking the translate button or use the speech recognition button to speak instead of typing.</p>
+                </li>
+                
+                <li><strong>Speech Recognition:</strong>
+                    <p>Alternatively, users can press the Speech Recognition button to activate the microphone and start recording their speech. Using a speech recognition service (e.g., Microsoft Speech SDK or Google Speech-to-Text API), the application converts speech to text and inserts it into the input field.</p>
+                    <p>Users can then select the target language and press the translate button to translate the text.</p>
+                </li>
+                
+                <li><strong>Target Language Selection:</strong>
+                    <p>Users can choose the language for translation using the language selection ComboBox. It includes languages such as English, French, German, Spanish, and others.</p>
+                </li>
+                
+                <li><strong>Text Translation:</strong>
+                    <p>Pressing the Translate button sends the text for translation and detects the input language. The API returns the translation, which is displayed in the Translated Text Display field.</p>
+                    <p>The app logs this translation in the Translation History for users to reference past translations.</p>
+                </li>
+                
+                <li><strong>Audio Feedback:</strong>
+                    <p>After translation, users can listen to the translated text by clicking the Audio Feedback button. The app uses a speech synthesis API (e.g., Google Text-to-Speech or Microsoft Speech SDK) to play the translated text aloud.</p>
+                    <p>Users can adjust the speed and pitch of the voice with TrackBar controls, enhancing the user experience.</p>
+                </li>
+                
+                <li><strong>Translation History:</strong>
+                    <p>The application keeps a history of translations in the Translation History ListBox, showing the original and translated text along with the selected language.</p>
+                    <p>This is useful for users to recall previous translations and reuse them if needed. Users can also clear the history when desired using the Clear History button.</p>
+                </li>
+                
+                <li><strong>Clear History:</strong>
+                    <p>Using the Clear History button, users can delete all previous translations from the history. The app prompts the user for confirmation to avoid accidental deletion. Upon confirmation, the history list is cleared and a status message is shown.</p>
+                </li>
+                
+                <li><strong>Application Status Display (Status Strip):</strong>
+                    <p>A Status Strip at the bottom of the application shows the current status in a Status Label. The app updates the Status Label when a new process begins (e.g., "Translating...") or completes ("Translation Complete"), keeping users informed of the app's status at all times.</p>
+                </li>
+            </ul>
+        
+            <h4>Additional User Experience Enhancements:</h4>
+            <ul>
+                <li><strong>Theme Selection (Dark Mode / Light Mode):</strong> Allows users to switch between light and dark themes for better readability in various lighting conditions.</li>
+                <li><strong>Speed and Pitch Controls for Audio Playback:</strong> Allows users to adjust the speed and pitch of the voice feedback for a more personalized experience.</li>
+                <li><strong>Automatic Input Language Detection:</strong> Detects the input language automatically, making translation easier and more convenient for users.</li>
+            </ul>
+        
+            <h4>Summary:</h4>
+            <p>This application provides a comprehensive real-time translator with a user-friendly interface and multiple options for personalizing the experience. Speech recognition and audio feedback add versatility to the app, making it useful for various scenarios. The translation history and display settings enhance usability, addressing different user needs efficiently.</p>
+        </div>
+        
+        <div class="project-preview">
+            <button onclick="showDetails('IntrusionDetectionSystem')">Intrusion Detection System (IDS)</button>
+        </div>
+        <div id="IntrusionDetectionSystem" class="project-details">
+            <h3>Intrusion Detection System (IDS)</h3>
+            <img src="IDS.png" alt="Intrusion Detection System Project Image" class="project-image" onclick="zoomImage(this)">
+            <p>This project is a real-time Intrusion Detection System that monitors network traffic, detects suspicious activities, and provides detailed reports.</p>
+        
+            <h4>Project Overview:</h4>
+            <p>The Intrusion Detection System (IDS) project is designed to provide real-time monitoring and detection of potential threats within network traffic. The project uses machine learning for anomaly detection, captures and analyzes network packets for specific types of suspicious activity, and offers a detailed reporting system in PDF format with graphical summaries of threats detected over time. This IDS is suitable for environments where network security is a priority and provides IT teams with a tool for proactive threat detection.</p>
+        
+            <h4>Functionalities:</h4>
+            <ul>
+                <li><strong>Network Packet Capture and Analysis:</strong>
+                    <ul>
+                        <li>Through the use of the <code>scapy</code> library, this system captures network packets in real-time and analyzes them to identify suspicious activities such as brute-force attempts and port scans.</li>
+                        <li>The function <code>analyze_packet()</code> inspects each incoming packet's IP and TCP layers to detect unusual patterns, such as multiple connection attempts (potential brute-force) or specific flags in packets indicating port scanning.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Anomaly Detection with Machine Learning:</strong>
+                    <ul>
+                        <li>This IDS employs an Isolation Forest model from <code>scikit-learn</code> to detect anomalies in network traffic based on specific packet parameters, including IP, payload size, and port number.</li>
+                        <li>The functions <code>train_model()</code> and <code>detect_anomaly()</code> work together to train the machine learning model with observed network traffic and flag suspicious packets that deviate from normal traffic patterns.</li>
+                        <li>The model continuously updates and adapts to the network's behavior over time, making it more effective in detecting novel or previously unseen attacks.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>PDF Reporting with Detailed Statistics and Graphs:</strong>
+                    <ul>
+                        <li>This system generates a comprehensive PDF report that includes summaries of detected threats, categorized by attack type and frequency.</li>
+                        <li>The <code>reportlab</code> library is used for creating the PDF document, while the <code>matplotlib</code> library generates bar charts that visually summarize the frequency of each attack type.</li>
+                        <li>The function <code>create_pdf_report()</code> compiles this data into a professional-looking PDF that provides network administrators with a clear and structured overview of network security over time.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Graphical User Interface (GUI) for Real-Time Monitoring:</strong>
+                    <ul>
+                        <li>The application features a user-friendly GUI built with <code>tkinter</code>, allowing network administrators to monitor attacks and suspicious traffic in real-time.</li>
+                        <li>The GUI includes real-time updates on active threats, buttons for generating PDF reports, and dynamically updated statistics on attack frequencies and sources.</li>
+                        <li>Administrators can easily navigate between sections and observe detailed stats with an intuitive design that emphasizes usability and clarity.</li>
+                    </ul>
+                </li>
+        
+                <li><strong>Real-Time Alerts for Immediate Notification:</strong>
+                    <ul>
+                        <li>The system provides immediate notifications for detected threats through audible alerts and pop-up messages, keeping network administrators informed at all times.</li>
+                        <li>The <code>play_alert_sound()</code> function uses <code>playsound</code> to play a notification sound, while <code>show_alert_popup()</code> displays a pop-up message with details on each detected threat.</li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <h4>Technical Details:</h4>
+            <p><strong>Key Methods and Libraries Used:</strong></p>
+            <ul>
+                <li><strong>analyze_packet():</strong> Analyzes each network packet to identify suspicious activity such as brute-force attempts and port scanning. Utilizes <code>scapy</code> for packet inspection and flag analysis.</li>
+                <li><strong>detect_brute_force() and log_suspicious_activity():</strong> Monitors login attempts to detect brute-force attacks by counting repeated login attempts from the same IP within a short timeframe. Uses counters to track each IP's activity, logging any detected brute-force attacks.</li>
+                <li><strong>train_model() and detect_anomaly():</strong> Trains an Isolation Forest model on observed network data, using IP, port, and payload size as features. The model predicts and flags packets that significantly deviate from normal behavior, aiding in the identification of more sophisticated threats.</li>
+                <li><strong>create_pdf_report():</strong> Gathers data on detected threats and generates a PDF report, utilizing <code>reportlab</code> for PDF creation and <code>matplotlib</code> for graphical representation of attack types and frequencies.</li>
+                <li><strong>play_alert_sound() and show_alert_popup():</strong> Notifies administrators of threats with a sound alert and a pop-up message, keeping them engaged with network security in real time.</li>
+            </ul>
+        
+            <h4>Purpose:</h4>
+            <p>The Intrusion Detection System (IDS) project demonstrates a comprehensive approach to network security through real-time monitoring, anomaly detection using machine learning, and detailed PDF reporting. The system combines C++ for server management and Python with C# for the client-side and UI functionalities, making it a robust solution for network administrators to monitor and analyze network traffic. This project showcases advanced threat detection capabilities, providing a valuable tool for IT teams and illustrating the integration of machine learning and real-time monitoring in network security.</p>
+        </div>
+        
+
     </section>
 
     <!-- Contact Section -->
