@@ -9,31 +9,30 @@
 <body>
     <!-- Header Section -->
     <header id="home">
-        <img src="newlogo2.png" alt="Logo" class="logo">
+  
         <div class="header-content">
             <h1>PORTFOLIO</h1>
-            <p>Short Bio:</p>
+            <p><strong>Short Bio:</strong></p>
             <p>I am Georgios Dontas, a programmer with a passion for innovative solutions and creating functional applications.</p>
             <p>Discover my projects and see how I can contribute to the development of your next project.</p>
-            <nav>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
         </div>
-        <button id="theme-toggle">Dark Mode</button>
     </header>
-    
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>My Projects</h2>
-        
-        <div class="project-preview">
-            <button onclick="showDetails('networkManager')">Network Manager</button>
+        <h2>PROJECT MENU</h2>
+        <div class="project-menu">
+            <button class="button-64" role="button"><span class="text">Network Manager</span></button>
+            <button class="button-64" role="button"><span class="text">Organizer</span></button>
+            <button class="button-64" role="button"><span class="text">Chat Moderator</span></button>
+            <button class="button-64" role="button"><span class="text">Translator</span></button>
+            <button class="button-64" role="button"><span class="text">Intrusion Detection System</span></button>
+            <button class="button-64" role="button"><span class="text">Encryption Tool</span></button>
         </div>
+
         <div id="networkManager" class="project-details">
             <h3>Network Manager</h3>
-            <img src="Network manager.png" alt="Network Manager Project Image" class="project-image" onclick="zoomImage(this)">
+            <img src="Network manager.png" alt="Network Manager Image" class="project-image">
             <p>This project is a Network Manager application that allows the user to monitor and manage network and VPN connections on their computer.</p>
             <p>The application is written in C# and uses the Windows Forms library for the graphical user interface (GUI).</p>
             <p>Following is a detailed description of the functions and features of the application:</p>
@@ -67,17 +66,11 @@
                 <li>Network Reconnect: Attempts to reconnect if the network connection is lost.</li>
             </ul>
         </div>
-        
-     
-        <div class="project-preview">
-            <button onclick="showDetails('todoList')">Organizer (Cloud Connected)</button>
-        </div>
-        <div id="todoList" class="project-details">
-            <h3>Organizer (Cloud Connected)</h3>
-            <img src="Organizer.png" alt="To-Do List Project Image" class="project-image" onclick="zoomImage(this)">
 
-            
-            <p><strong>Project Description: ToDo List with Cloud Sync</strong></p>
+
+        <div id="todoList" class="project-details">
+            <h3>Organizer</h3>
+            <img src="Organizer.png" alt="Organizer Project Image" class="project-image">
             <p>This project is a task management application (ToDo List) that allows users to create, manage, and track their tasks. The application offers cloud synchronization features, supporting multiple users with secure Firebase authentication. Users can log in, sync their tasks to the cloud, and receive notifications for upcoming deadlines.</p>
         
             <p><strong>Application Features</strong></p>
@@ -176,12 +169,9 @@
         </div>
 
 
-        <div class="project-preview">
-            <button onclick="showDetails('chatModerator')">Chat Moderator</button>
-        </div>
         <div id="chatModerator" class="project-details">
             <h3>Chat Moderator</h3>
-            <img src="ChatUI.png" alt="Chat Moderator Project Image" class="project-image" onclick="zoomImage(this)">
+            <img src="ChatUI.png" alt="Chat Moderator Image" class="project-image">
             <p>This project is a real-time chat moderation tool that allows moderators to monitor and manage chat messages.</p>
         
             <h4>Project Overview:</h4>
@@ -235,13 +225,11 @@
             <h4>Purpose:</h4>
             <p>This project is intended to simulate a real-time chat moderation tool that handles both the technical and interface aspects of managing a live chat environment. It demonstrates how to use C++ for server management alongside C# for a polished, interactive client interface.</p>
         </div>
-        
-        <div class="project-preview">
-            <button onclick="showDetails('translator')">Translator</button>
-        </div>
+
+
         <div id="translator" class="project-details">
             <h3>Translator</h3>
-            <img src="Translateimage.png" alt="Translator Project Image" class="project-image" onclick="zoomImage(this)">
+            <img src="Translateimage.png" alt="Translator Image" class="project-image">
             <p>This application is a real-time text and speech translator, allowing users to translate text and receive spoken feedback in their chosen language. It includes features for speech recognition, translation history, and audio playback of translated text. The app is designed with a simple, user-friendly interface, offering instant updates on its status and additional settings to customize the user experience.</p>
             
             <h4>Application Features:</h4>
@@ -293,13 +281,11 @@
             <h4>Summary:</h4>
             <p>This application provides a comprehensive real-time translator with a user-friendly interface and multiple options for personalizing the experience. Speech recognition and audio feedback add versatility to the app, making it useful for various scenarios. The translation history and display settings enhance usability, addressing different user needs efficiently.</p>
         </div>
-        
-        <div class="project-preview">
-            <button onclick="showDetails('IntrusionDetectionSystem')">Intrusion Detection System (IDS)</button>
-        </div>
-        <div id="IntrusionDetectionSystem" class="project-details">
-            <h3>Intrusion Detection System (IDS)</h3>
-            <img src="IDS.png" alt="Intrusion Detection System Project Image" class="project-image" onclick="zoomImage(this)">
+
+
+        <div id="intrusionDetectionSystem" class="project-details">
+            <h3>Intrusion Detection System</h3>
+            <img src="IDS.png" alt="IDS Image" class="project-image">
             <p>This project is a real-time Intrusion Detection System that monitors network traffic, detects suspicious activities, and provides detailed reports.</p>
         
             <h4>Project Overview:</h4>
@@ -338,7 +324,7 @@
                     </ul>
                 </li>
         
-                <li><strong>Real-Time Alerts for Immediate Notification:</strong>
+                <li><strong>Real-Time Alerts for Immediate Notification:</strongα>
                     <ul>
                         <li>The system provides immediate notifications for detected threats through audible alerts and pop-up messages, keeping network administrators informed at all times.</li>
                         <li>The <code>play_alert_sound()</code> function uses <code>playsound</code> to play a notification sound, while <code>show_alert_popup()</code> displays a pop-up message with details on each detected threat.</li>
@@ -359,17 +345,115 @@
             <h4>Purpose:</h4>
             <p>The Intrusion Detection System (IDS) project demonstrates a comprehensive approach to network security through real-time monitoring, anomaly detection using machine learning, and detailed PDF reporting. The system combines C++ for server management and Python with C# for the client-side and UI functionalities, making it a robust solution for network administrators to monitor and analyze network traffic. This project showcases advanced threat detection capabilities, providing a valuable tool for IT teams and illustrating the integration of machine learning and real-time monitoring in network security.</p>
         </div>
+
+        <div id="encryptionTool" class="project-details">
+            <h3>Encryption & Decryption Tool</h3>
+            <img src="encrypt1.png" alt="Encryption Tool Image" class="project-image">
+            <p>
+                This project is a graphical user interface (GUI) application for encryption and decryption of files using modern security methods. 
+                It is designed to provide an intuitive and modern user interface with built-in functionalities such as:
+            </p>
+            <ul>
+                <li>Selection of encryption algorithms (AES, Blowfish, Triple DES).</li>
+                <li>Adjustable block size for greater flexibility.</li>
+                <li>Support for dark and light themes.</li>
+                <li>Progress bar to track the process in real-time.</li>
+                <li>Event logging to monitor all actions.</li>
+                <li>Cancel button to interrupt ongoing processes.</li>
+                <li>Secure storage and retrieval of encryption keys.</li>
+            </ul>
+            <p><strong>Technologies and Libraries:</strong></p>
+            <ul>
+                <li>Python: The programming language used.</li>
+                <li>CustomTkinter: For a modern user interface.</li>
+                <li>Cryptography: Library for implementing secure encryption methods.</li>
+                <li>Tkinter: Core library for GUI development.</li>
+                <li>pydrive (optional): For uploading files to cloud services (e.g., Google Drive).</li>
+            </ul>
+            <p><strong>Key Features:</strong></p>
+            <p><u>File Encryption:</u></p>
+            <ul>
+                <li>Uses the AES-256 algorithm (default).</li>
+                <li>Options to select Blowfish and Triple DES algorithms.</li>
+                <li>Configurable block size (e.g., 128, 192, 256 bits).</li>
+            </ul>
+            <p><u>File Decryption:</u></p>
+            <ul>
+                <li>Restores the original content using the correct key.</li>
+                <li>Validates the key before proceeding with decryption.</li>
+            </ul>
+            <p><u>Algorithm Selection:</u></p>
+            <ul>
+                <li>Users can choose between AES, Blowfish, and Triple DES.</li>
+                <li>Dynamic block size adjustments based on the selected algorithm.</li>
+            </ul>
+            <p><u>Dark and Light Themes:</u></p>
+            <ul>
+                <li>The user can toggle between light and dark themes via a dedicated button.</li>
+            </ul>
+            <p><u>Progress Bar:</u></p>
+            <ul>
+                <li>Shows real-time progress during encryption/decryption.</li>
+            </ul>
+            <p><u>Event Logging:</u></p>
+            <ul>
+                <li>All actions (e.g., encryption, errors) are logged in the <code>encryption_tool.log</code> file for future reference.</li>
+            </ul>
+            <p><u>Process Cancellation:</u></p>
+            <ul>
+                <li>A cancel button allows users to stop encryption or decryption mid-process.</li>
+            </ul>
+            <p><strong>Design Highlights:</strong></p>
+            <p><u>CustomTkinter for UI:</u></p>
+            <ul>
+                <li>Modern appearance with support for light and dark themes.</li>
+                <li>Widgets such as CTkButton, CTkSlider, CTkProgressBar, and CTkOptionMenu for enhanced user experience.</li>
+            </ul>
+            <p><u>Security:</u></p>
+            <ul>
+                <li>Uses the AES-256 algorithm, one of the most secure encryption methods.</li>
+                <li>Securely stores the encryption key in a file.</li>
+            </ul>
+            <p><u>Interactivity:</u></p>
+            <ul>
+                <li>Interactive buttons with real-time feedback (e.g., color change on click).</li>
+                <li>Live progress updates via the progress bar.</li>
+            </ul>
+            <p><strong>Generated Files:</strong></p>
+            <ul>
+                <li><u>Encrypted Files:</u> Files are saved with a <code>.encrypted</code> extension.</li>
+                <li><u>Decrypted Files:</u> Restored files are saved with a <code>.decrypted</code> extension.</li>
+                <li><u>Log File:</u> The <code>encryption_tool.log</code> file records all actions and errors.</li>
+            </ul>
+            <p><strong>Workflow:</strong></p>
+            <p><u>Encryption:</u></p>
+            <ol>
+                <li>The user selects a file to encrypt.</li>
+                <li>Chooses the algorithm and block size.</li>
+                <li>Clicks the "Encrypt" button.</li>
+                <li>The progress bar tracks the encryption process.</li>
+                <li>The encrypted file is generated, and the action is logged.</li>
+            </ol>
+            <p><u>Decryption:</u></p>
+            <ol>
+                <li>The user selects an encrypted file.</li>
+                <li>Loads the encryption key and validates it.</li>
+                <li>Clicks the "Decrypt" button.</li>
+                <li>The original file is restored, and the action is logged.</li>
+            </ol>
+        </div>
+        
         
 
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out via email or social media:</p>
-        <p>Email: deltalzk@gmail.com</p>
-        <p>Phone: +30 6988621401</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/george-dontas-ab79181a1" target="_blank">George Dontas</a></p>
+        <h2>Contact</h2>
+        <p>Feel free to reach out via email ,phone or social media:</p>
+        <p><strong>E-mail:</strong>  deltalzk@gmail.com</p>
+        <p><strong>Phone:</strong> (+30) 69 88621401</p>
+        <p><strong>LinkedIn: </strong><a href="https://www.linkedin.com/in/george-dontas-ab79181a1" target="_blank">George Dontas</a></p>
     </section>
 
     <script src="app.js"></script>

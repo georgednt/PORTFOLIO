@@ -1,46 +1,60 @@
-// Smooth scroll effect for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
+
+
+// Toggle Project Details
+function toggleDetails(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    } else {
+        element.style.display = "block";
+    }
+}
+
+// Zoom Image
+document.querySelectorAll('.project-details img').forEach((img) => {
+    img.addEventListener('click', () => {
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = 0;
+        modal.style.left = 0;
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = 1000;
+
+        const modalImg = document.createElement('img');
+        modalImg.src = img.src;
+        modalImg.style.maxWidth = '90%';
+        modalImg.style.maxHeight = '90%';
+
+        modal.appendChild(modalImg);
+
+        modal.addEventListener('click', () => {
+            document.body.removeChild(modal);
         });
+
+        document.body.appendChild(modal);
     });
 });
 
-// Toggle project details
-function showDetails(projectId) {
-    const project = document.getElementById(projectId);
-    project.classList.toggle("show");
-}
-
-// Zoom effect for image
-function zoomImage(img) {
-    const zoomedImage = document.createElement('div');
-    zoomedImage.style.backgroundImage = `url(${img.src})`;
-    zoomedImage.style.backgroundSize = 'contain';
-    zoomedImage.style.backgroundRepeat = 'no-repeat';
-    zoomedImage.style.backgroundPosition = 'center';
-    zoomedImage.style.position = 'fixed';
-    zoomedImage.style.top = '50%';
-    zoomedImage.style.left = '50%';
-    zoomedImage.style.width = '80%';
-    zoomedImage.style.height = '80%';
-    zoomedImage.style.transform = 'translate(-50%, -50%)';
-    zoomedImage.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    zoomedImage.style.cursor = 'zoom-out';
-    zoomedImage.style.zIndex = '1000';
-    
-    zoomedImage.onclick = function () {
-        document.body.removeChild(zoomedImage);
-    };
-    document.body.appendChild(zoomedImage);
-}
-
-// Toggle theme between Dark Mode and Light Mode
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    themeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+document.querySelectorAll('.button-64').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const projectDetails = document.querySelectorAll('.project-details');
+        projectDetails.forEach((detail, detailIndex) => {
+            if (index === detailIndex) {
+                // Εναλλαγή εμφάνισης του τρέχοντος project
+                if (detail.style.display === 'block') {
+                    detail.style.display = 'none';
+                } else {
+                    detail.style.display = 'block';
+                }
+            } else {
+                // Κρύψε όλα τα άλλα projects
+                detail.style.display = 'none';
+            }
+        });
+    });
 });

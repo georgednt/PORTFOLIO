@@ -5,321 +5,177 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
-    font-family: 'Fjalla One', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    font-family: 'Bold 700', Caudex;
     line-height: 1.6;
-    background-color: #f4f4f9;
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Logo Styling */
-.logo {
-    width: 300px; /* Προεπιλεγμένο μέγεθος για desktop */
-    height: auto;
-    margin-right: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .logo {
-        width: 180px; /* Μικρότερη εικόνα σε tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        width: 120px; /* Μικρότερη εικόνα σε κινητά */
-    }
-}
-
-/* Βασικό στυλ header */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #1a1a1d, #4e4e50); /* Κομψή διαβάθμιση χρώματος */
-    color: #ffffff;
-    padding: 3rem 2rem;
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Στυλ για το περιεχόμενο στο header */
-.header-content {
-    text-align: center;
-    max-width: 800px; /* Πιο ευρύ, επιτρέπει στο κείμενο να απλωθεί */
-    background-color: rgba(0, 0, 0, 0.5); /* Ελαφριά ημιδιαφάνεια για καλύτερη ανάγνωση */
-    padding: 2rem;
-    border-radius: 15px;
-}
-
-/* Τίτλος (PORTFOLIO) */
-.header-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 1.5rem;
-    color: #548fd3;
-    text-transform: uppercase;
-}
-
-/* Στυλ για τις παραγράφους */
-.header-content p {
-    font-size: 1.4rem; /* Κομψό και ευδιάκριτο */
-    line-height: 1.7;
-    margin: 1rem 0;
-    color: #EDEDED;
-}
-
-/* Ειδικό στυλ για την πρώτη παράγραφο */
-.header-content p:first-of-type {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #FFFFFF;
-}
-
-/* Στυλ για συνδέσμους πλοήγησης */
-header nav a {
-    color: #548fd3;
-    font-weight: 600;
-    font-size: 1.2rem;
-    text-decoration: none;
-    margin: 0 1.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
+    background: #f4f4f9;
+    color: #333;
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: rgba(255, 215, 0, 0.2);
-    color: #ffffff;
-}
-
-/* Κουμπί εναλλαγής θέματος */
-#theme-toggle {
-    background-color: #548fd3;
-    color: black;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#theme-toggle:hover {
-    background-color: #333;
-    color: #548fd3;
-    transform: scale(1.05); /* Ελαφρύ εφέ μεγέθυνσης */
-}
-
-/* Section Styling with Divider */
-section {
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-#projects h2,
-#contact h2 {
-    font-size: 2.5rem;
-    color: #4A90E2;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
 }
 
 /* Dark Mode Styling */
 body.dark-mode {
-    background-color: #333;
+    background: #ffffff;
     color: #f4f4f9;
 }
 
-body.dark-mode header {
-    background-color: #222;
-}
-
-body.dark-mode .project {
-    background-color: #444;
-    border-color: #555;
-}
-
-body.dark-mode #theme-toggle {
-    background-color: #555;
-    color: #f4f4f9;
-}
-
-/* Project Card Styling */
-.project {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
+/* Header */
+header {
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background: url('pexell.jpg')center;
+    color: white;
+    padding: 5rem 1rem;
+    border-radius: 0 0 40px 40px;
+    position: static;
+    min-height: auto;
 }
 
-.project:hover {
-    transform: translateY(-10px);
+/* Στυλ για το περιεχόμενο του header */
+.header-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
 }
 
-.project h3 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.project p,
-.project ul {
-    color: #555;
-    font-size: 1rem;
+/* Τίτλος */
+header h1 {
+    font-family: 'Bold 700', Caudex; /* Χρήση Impact γραμματοσειράς */
+    font-size: 6rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    line-height: 1.5;
+    color: #fff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 15px; /* Ελαφρώς μεγαλύτερο κενό μεταξύ των γραμμάτων */
 }
 
-.project ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    text-align: left;
+/* Υπότιτλοι */
+header p {
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
 }
 
-/* Transition Effect for Images */
-.project-image {
-    max-width: 100%;
-    border-radius: 5px;
-    margin: 1rem 0;
-    transition: transform 0.3s ease;
+
+/* Κουμπί Dark Mode */
+#theme-toggle {
+    background: #1a293f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 
-.project-image:hover {
-    transform: scale(1.05);
+#theme-toggle:hover {
+    background: linear-gradient(to right, #2575FC, #6A11CB);
+    transform: scale(1.25);
 }
 
-/* Transition for Text Appearance */
-.project h3, .project p {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Projects Section */
+#projects {
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-.project.show h3, .project.show p {
-    opacity: 1;
-    transform: translateY(0);
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a293f; /* Νέο χρώμα για το Projects */
+    font-weight: bold;
 }
 
-/* Project Details Section */
-/* Βασικές ρυθμίσεις για απόκρυψη περιεχομένου */
+
+
+/* Project Menu */
+.project-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-menu button {
+    background: #1a293f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-menu button:hover {
+    background: linear-gradient(to right, #2575FC, #6A11CB);
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Details */
 .project-details {
-    opacity: 0;
-    max-height: 0; /* Αρχικά κρυφό */
-    overflow: hidden; /* Απόκρυψη περιεχομένου όταν είναι κρυφό */
-    transition: opacity 0.5s ease, max-height 0.5s ease;
+    display: none;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    transition: 0.3s ease;
 }
 
-/* Εμφάνιση περιεχομένου όταν η κλάση "show" είναι ενεργή */
-.project-details.show {
-    opacity: 1;
-    max-height: 5000px; /* Επαρκές ύψος για μεγάλο περιεχόμενο */
-    overflow: visible;
+body.dark-mode .project-details {
+    background: #333;
+    border-color: #444;
 }
 
+.project-details img {
+    max-width: 90%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* Responsive adjustments */
+.project-details img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+#contact {
+    padding: 2rem;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+#contact h2 {
+    color: #1a293f;
+    margin-bottom: 1rem;
+}
+
+/* Labels Styling */
+#contact p {
+    color: #555; /* Default label color */
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .project-details h3 {
-        font-size: 1.5rem;
-    }
-    .project-details p, .project-details ul {
-        font-size: 1rem;
-        line-height: 1.5;
+    #projects h2 {
+        font-size: 2rem; /* Μικρότερο μέγεθος για tablets */
     }
 }
 
 @media (max-width: 480px) {
-    .project-details h3 {
-        font-size: 1.3rem;
+    #projects h2 {
+        font-size: 1.8rem; /* Μικρότερο μέγεθος για κινητά */
     }
-    .project-details p, .project-details ul {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-}
-
-/* Styling for full screen image */
-img.project-image {
-    cursor: pointer;
-}
-
-/* Project Preview Button Styling */
-.project-preview {
-    margin-bottom: 1rem;
-}
-
-.project-preview button {
-    font-size: 1.2rem;
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.project-preview button:hover {
-    background-color: #357ABD;
-}
-
-/* Contact Section Styling */
-#contact p {
-    font-size: 1.1rem;
-    margin: 0.8rem 0;
-}
-
-#contact a {
-    color: #4A90E2;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Social Media Icons in Footer */
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: #4A90E2;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-.social-icons a:hover {
-    background-color: #357ABD;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #333;
-    color: white;
-    font-size: 0.9rem;
-    margin-top: 2rem;
 }
